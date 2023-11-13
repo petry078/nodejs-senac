@@ -1,0 +1,18 @@
+{{>partials/header}}
+<body>
+    <h1>Node.ts com TypeScript, Express.js e Mustache</h2>
+    <p>Olá, {{name}}!</p>
+    <p>{{#mostrarIdade}}Você é maior de idade!{{/mostrarIdade}}</p>
+    <ul>
+        {{#produtos}} <!--Se essa variável existe no código, será exibida ou produtos = false, inicialize com false dps faz um if pra por pra true ai aparece aqui-->
+            <li>{{nomeDoProduto}} - R$ {{preco}}</li>
+        {{/produtos}}
+    </ul>
+
+    <hr>
+
+    {{#frases}}
+        <li>{{.}}</li>
+    {{/frases}}
+</body>
+{{>partials/footer}}

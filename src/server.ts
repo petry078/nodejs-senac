@@ -16,6 +16,9 @@ server.engine('mustache',mustache())
 //atribui o caminho da pasta public (imagens e css)
 server.use(express.static(path.join(__dirname, '../public')))
 
+//usando POST
+server.use(express.urlencoded({extended:true}))
+
 server.use(mainRoutes)
 
 //404 page
