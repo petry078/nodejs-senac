@@ -2,6 +2,10 @@ import express, {Request, Response} from 'express'
 import mainRoutes from './routes/index'
 import path from 'path'
 import mustache from 'mustache-express'
+import dotenv from 'dotenv'
+
+//server use doenv
+dotenv.config()
 
 //atribui express() para a variável servidor
 const server = express()
@@ -27,5 +31,5 @@ server.use((req:Request, res:Response) => {
 })
 
 //express.ouvindo a porta 3000
-server.listen(3000)
-console.log(`http://localhost:3000/`)
+server.listen(process.env.PORT)
+console.log(`http://localhost:4000/`)
